@@ -1,0 +1,12 @@
+FROM ghcr.io/dubonzi/mantis:latest
+
+COPY mappings mappings
+COPY response response
+
+ENV LOADER_PATH_MAPPING=mappings
+ENV LOADER_PATH_RESPONSE=response
+ENV SERVER_PORT=8090
+ENV HEALTH_PORT=8091
+ENV LOG_LEVEL=DEBUG
+
+EXPOSE 8090 8091

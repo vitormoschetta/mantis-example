@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "POST",
+    "path": {
+      "exact": "/order"
+    },
+    "body": {
+      "contains": [
+        "orderId",
+        "999"
+      ]
+    },
+    "headers": {
+      "content-type": {
+        "exact": "application/json"
+      }
+    }
+  },
+  "response": {
+    "statusCode": 201
+  }
+}

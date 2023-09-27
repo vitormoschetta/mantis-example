@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": {
+      "exact": "/json/path"
+    },
+    "body": {
+      "jsonPath": [
+        "$.person[?(@.age > 21 || @.name == 'John')]"
+      ]
+    }
+  },
+  "response": {
+    "statusCode": 200
+  }
+}

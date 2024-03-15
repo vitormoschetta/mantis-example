@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  mantis:
+    container_name: mantis
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: "no"
+    environment:
+      LOADER_PATH_MAPPING: /mappings
+      LOADER_PATH_RESPONSE: /response
+      SERVER_PORT: 8090
+      HEALTH_PORT: 8091
+      LOG_LEVEL: DEBUG
+    ports:
+      - 8090:8090
+      - 8091:8091
+    volumes:
+      - ./mappings:/mappings
+      - ./response:/response
+    

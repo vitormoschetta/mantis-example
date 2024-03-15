@@ -1,0 +1,37 @@
+{
+    "request": {
+        "method": "POST",
+        "path": {
+            "exact": "/products"
+        },
+        "headers": {
+            "Content-type": {
+                "exact": "application/json"
+            },
+            "Authorization": {
+                "contains": [
+                    "my-token"
+                ]
+            }
+        },
+        "body": {
+            "contains": [
+                "product",
+                "12345"
+            ]
+        }
+    },
+    "response": {
+        "statusCode": 201,
+        "headers": {
+            "content-type": "application/json",
+            "location": "/products/12345"
+        },
+        "body": "{\"id\": \"777\",\"code\": \"12345\",\"name\": \"product\"}",
+        "delay": {
+            "fixed": {
+                "duration": "250ms"
+            }
+        }
+    }
+}
